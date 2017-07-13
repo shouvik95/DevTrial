@@ -1,4 +1,4 @@
 DevTrial
 ========
 
-A Symfony project created on July 9, 2017, 10:56 pm.
+A Symfony project that tracks Soccer game stats. Simply add, edit, and delete a list of statistics for a given game.
