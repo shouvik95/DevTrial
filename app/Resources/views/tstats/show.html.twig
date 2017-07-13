@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block scrollable %}
+    <h1>TStats</h1>
+    <div class="table-responsive">
+    <table class="record_properties table">
+        <tbody>
+            <tr>
+                <th>Tname</th>
+                <td>{{ tStat.tName }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if tStat.date %}{{ tStat.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>HalfTime</th>
+                <td>{{ tStat.halftime }}</td>
+            </tr>
+            <tr>
+                <th>Cornerk</th>
+                <td>{{ tStat.cornerK }}</td>
+            </tr>
+            <tr>
+                <th>Goalk</th>
+                <td>{{ tStat.goalK }}</td>
+            </tr>
+            <tr>
+                <th>Freek</th>
+                <td>{{ tStat.freeK }}</td>
+            </tr>
+            <tr>
+                <th>Venue</th>
+                <td>{{ tStat.venue }}</td>
+            </tr>
+            <tr>
+                <th>Tid</th>
+                <td>{{ tStat.tId }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <ul style="padding: 0; list-style-type: none;">
+        <li>
+            <a class="btn btn-primary btn-lg" role="button" href="{{ path('edit2_index') }}">Back to the list</a>
+        </li>
+        <li style="margin-top: 10px;">
+            <a class="btn btn-primary btn-lg" role="button" href="{{ path('edit2_edit', { 'id': tStat.tId }) }}">Edit</a>
+        </li>
+        <li style="margin-top: 10px;">
+            {{ form_start(delete_form) }}
+                <input class="btn btn-primary btn-lg" role="button" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
+
+{% block li2 %}
+    <li style="margin-top: 300%;">
+        <a href="{{ path('logout') }}">
+            <i class="fa fa-sign-out fa-2x"></i>
+            <span class="nav-text">
+                            Log Out
+                        </span>
+        </a>
+    </li>
+{% endblock %}

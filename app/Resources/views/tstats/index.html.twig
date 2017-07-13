@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block scrollable %}
+    <h1>TStats list</h1>
+    <div class="table-responsive">
+    <table class="records_list table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Tname</th>
+                <th>Date</th>
+                <th>HalfTime</th>
+                <th>Cornerk</th>
+                <th>Goalk</th>
+                <th>Freek</th>
+                <th>Venue</th>
+                <th>Tid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tStat in tStats %}
+            <tr>
+                <td><a href="{{ path('edit2_show', { 'id': tStat.tId }) }}">{{ tStat.tName }}</a></td>
+                <td>{% if tStat.date %}{{ tStat.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ tStat.halftime }}</td>
+                <td>{{ tStat.cornerK }}</td>
+                <td>{{ tStat.goalK }}</td>
+                <td>{{ tStat.freeK }}</td>
+                <td>{{ tStat.venue }}</td>
+                <td>{{ tStat.tId }}</td>
+                <td style="text-align: center; vertical-align: middle;">
+                    <ul style="list-style-type: none;">
+                        <li>
+                            <a class="btn btn-default btn-xs" href="{{ path('edit2_show', { 'id': tStat.tId }) }}">show</a>
+                        </li>
+                        <li style="margin-top: 10px;">
+                            <a class="btn btn-default btn-xs" href="{{ path('edit2_edit', { 'id': tStat.tId }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    <ul style="padding: 0; list-style-type: none;">
+        <li>
+            <a class="btn btn-primary btn-lg" href="{{ path('edit2_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block li2 %}
+    <li style="margin-top: 300%;">
+        <a href="{{ path('logout') }}">
+            <i class="fa fa-sign-out fa-2x"></i>
+            <span class="nav-text">
+                            Log Out
+                        </span>
+        </a>
+    </li>
+{% endblock %}

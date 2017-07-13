@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DbBundle\Entity\TStats" table="t_stats">
+    <id name="tId" type="integer" column="t_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="tName" type="string" column="t_name" length="55" nullable="false"/>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="halftime" type="string" column="halftime" length="55" nullable="false"/>
+    <field name="cornerK" type="integer" column="corner_k" nullable="false"/>
+    <field name="goalK" type="integer" column="goal_k" nullable="false"/>
+    <field name="freeK" type="integer" column="free_k" nullable="false"/>
+    <field name="venue" type="string" column="venue" length="55" nullable="false"/>
+  </entity>
+</doctrine-mapping>

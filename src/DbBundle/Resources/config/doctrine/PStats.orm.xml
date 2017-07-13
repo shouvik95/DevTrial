@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DbBundle\Entity\PStats" table="p_stats">
+    <id name="pId" type="integer" column="p_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="pName" type="string" column="p_name" length="55" nullable="false"/>
+    <field name="tName" type="string" column="t_name" length="55" nullable="false"/>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="halftime" type="string" column="halftime" length="55" nullable="false"/>
+    <field name="shot" type="integer" column="shot" nullable="false"/>
+    <field name="shotongoal" type="integer" column="shotOnGoal" nullable="false"/>
+    <field name="assist" type="integer" column="assist" nullable="false"/>
+    <field name="goal" type="integer" column="goal" nullable="false"/>
+    <field name="owngoal" type="integer" column="ownGoal" nullable="false"/>
+    <field name="penaltykickmade" type="integer" column="penaltyKickMade" nullable="false"/>
+    <field name="penaltykickattempt" type="integer" column="penaltyKickAttempt" nullable="false"/>
+    <field name="offsides" type="integer" column="offsides" nullable="false"/>
+    <field name="keepersave" type="integer" column="keeperSave" nullable="false"/>
+    <field name="foul" type="integer" column="foul" nullable="false"/>
+    <field name="yellowcard" type="integer" column="yellowCard" nullable="false"/>
+    <field name="redcard" type="integer" column="redCard" nullable="false"/>
+  </entity>
+</doctrine-mapping>

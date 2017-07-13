@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block scrollable %}
+    <h1>Overall edit</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input class="btn btn-primary btn-lg" role="button" type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul style="padding: 0; list-style-type: none;">
+        <li style="margin-top: 10px;">
+            <a class="btn btn-primary btn-lg" role="button" href="{{ path('edit_index') }}">Back to the list</a>
+        </li>
+        <li style="margin-top: 10px;">
+            {{ form_start(delete_form) }}
+                <input class="btn btn-primary btn-lg" role="button" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
+
+{% block li2 %}
+    <li style="margin-top: 300%;">
+        <a href="{{ path('logout') }}">
+            <i class="fa fa-sign-out fa-2x"></i>
+            <span class="nav-text">
+                            Log Out
+                        </span>
+        </a>
+    </li>
+{% endblock %}

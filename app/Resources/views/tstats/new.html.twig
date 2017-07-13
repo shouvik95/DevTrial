@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block scrollable %}
+    <h1>TStats creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="btn btn-primary btn-lg" role="button" type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul style="padding: 0; list-style-type: none;">
+        <li style="margin-top: 10px;">
+            <a class="btn btn-primary btn-lg" role="button" href="{{ path('edit2_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block li2 %}
+    <li style="margin-top: 300%;">
+        <a href="{{ path('logout') }}">
+            <i class="fa fa-sign-out fa-2x"></i>
+            <span class="nav-text">
+                            Log Out
+                        </span>
+        </a>
+    </li>
+{% endblock %}

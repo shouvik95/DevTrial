@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block scrollable %}
+    <h1>PStats</h1>
+    <div class="table-responsive">
+    <table class="record_properties table">
+        <tbody>
+            <tr>
+                <th>Pname</th>
+                <td>{{ pStat.pName }}</td>
+            </tr>
+            <tr>
+                <th>Tname</th>
+                <td>{{ pStat.tName }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if pStat.date %}{{ pStat.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>HalfTime</th>
+                <td>{{ pStat.halftime }}</td>
+            </tr>
+            <tr>
+                <th>Shot</th>
+                <td>{{ pStat.shot }}</td>
+            </tr>
+            <tr>
+                <th>Shotongoal</th>
+                <td>{{ pStat.shotongoal }}</td>
+            </tr>
+            <tr>
+                <th>Assist</th>
+                <td>{{ pStat.assist }}</td>
+            </tr>
+            <tr>
+                <th>Goal</th>
+                <td>{{ pStat.goal }}</td>
+            </tr>
+            <tr>
+                <th>Owngoal</th>
+                <td>{{ pStat.owngoal }}</td>
+            </tr>
+            <tr>
+                <th>Penaltykickmade</th>
+                <td>{{ pStat.penaltykickmade }}</td>
+            </tr>
+            <tr>
+                <th>Penaltykickattempt</th>
+                <td>{{ pStat.penaltykickattempt }}</td>
+            </tr>
+            <tr>
+                <th>Offsides</th>
+                <td>{{ pStat.offsides }}</td>
+            </tr>
+            <tr>
+                <th>Keepersave</th>
+                <td>{{ pStat.keepersave }}</td>
+            </tr>
+            <tr>
+                <th>Foul</th>
+                <td>{{ pStat.foul }}</td>
+            </tr>
+            <tr>
+                <th>Yellowcard</th>
+                <td>{{ pStat.yellowcard }}</td>
+            </tr>
+            <tr>
+                <th>Redcard</th>
+                <td>{{ pStat.redcard }}</td>
+            </tr>
+            <tr>
+                <th>Pid</th>
+                <td>{{ pStat.pId }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <ul style="padding: 0; list-style-type: none;">
+        <li>
+            <a class="btn btn-primary btn-lg" role="button" href="{{ path('edit1_index') }}">Back to the list</a>
+        </li>
+        <li style="margin-top: 10px;">
+            <a class="btn btn-primary btn-lg" role="button" href="{{ path('edit1_edit', { 'id': pStat.pId }) }}">Edit</a>
+        </li>
+        <li style="margin-top: 10px;">
+            {{ form_start(delete_form) }}
+                <input class="btn btn-primary btn-lg" role="button" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
+
+{% block li2 %}
+    <li style="margin-top: 300%;">
+        <a href="{{ path('logout') }}">
+            <i class="fa fa-sign-out fa-2x"></i>
+            <span class="nav-text">
+                            Log Out
+                        </span>
+        </a>
+    </li>
+{% endblock %}

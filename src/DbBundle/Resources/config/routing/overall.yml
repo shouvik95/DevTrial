@@ -1,0 +1,24 @@
+edit_index:
+    path:     /
+    defaults: { _controller: "DbBundle:Overall:index" }
+    methods:  GET
+
+edit_show:
+    path:     /{id}/show
+    defaults: { _controller: "DbBundle:Overall:show" }
+    methods:  GET
+
+edit_new:
+    path:     /new
+    defaults: { _controller: "DbBundle:Overall:new" }
+    methods:  [GET, POST]
+
+edit_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DbBundle:Overall:edit" }
+    methods:  [GET, POST]
+
+edit_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DbBundle:Overall:delete" }
+    methods:  DELETE
